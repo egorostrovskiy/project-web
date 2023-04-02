@@ -33,7 +33,6 @@ window.addEventListener('scroll', function() {
     if (opacity > 1) {
         opacity = 1
     }
-    console.log(value)
     header_img.style.transform = "translateY(" + translate + "px)" + " scale(" + scale + ")"
     header_text.style.transform = "scale(" + scale + ")"
 
@@ -289,6 +288,7 @@ function init() {
     controls4.target.set(0, 1, 0)
 
     function animate() {
+        console.log("gg")
         requestAnimationFrame(animate)
         if (container.clientWidth > 0 && container.clientHeight > 0) {
             camera.aspect = container.clientWidth / container.clientHeight;
