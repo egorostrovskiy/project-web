@@ -288,7 +288,8 @@ function init() {
     controls4.target.set(0, 1, 0)
 
     function animate() {
-        console.log("gg")
+        console.log(container.clientWidth)
+        console.log(container)
         requestAnimationFrame(animate)
         if (container.clientWidth > 0 && container.clientHeight > 0) {
             camera.aspect = container.clientWidth / container.clientHeight;
