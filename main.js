@@ -48,17 +48,24 @@ let container = document.getElementById("model-one-view")
 let container2 = document.getElementById("model-two-view")
 let container3 = document.getElementById("model-three-view")
 let container4 = document.getElementById("model-four-view")
+let progressBar = document.getElementById("progress-bar")
+let progressBarContainer = document.getElementById("progress-bar-container")
 
 function init() {
-    let gltfloader = new GLTFLoader();
-    let dracoloader = new DRACOLoader();
+    const loadingManager = THREE.LoadingManager();
+
+    loadingManager.onProgress = function(url, loaded, total) {
+        progressBar.value = (loaded / total) * 100;
+    }
+
+    loadingManager.onLoad = function(url, loaded, total) {
+        progressBarContainer.style.display = 'none'
+    }
+
+    let gltfloader = new GLTFLoader(loadingManager);
+    let dracoloader = new DRACOLoader(loadingManager);
     dracoloader.setDecoderPath(dracoUrl)
     gltfloader.setDRACOLoader(dracoloader)
-
-
-
-
-
 
 
 
