@@ -57,7 +57,6 @@ function init() {
     const loadingManager = new THREE.LoadingManager();
 
     loadingManager.onProgress = function(url, loaded, total) {
-        console.log(loaded)
         progressBar.value = (loaded / total) * 100;
     }
 
