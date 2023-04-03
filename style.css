@@ -62,11 +62,14 @@ p strong {
 }
 
 #progress-bar {
-  background-color: #ffa951;
   width: 40%;
   margin-top: 0.5%;
   height: 2%;
 }
+
+progress::-moz-progress-bar { background: #ffa951; }
+progress::-webkit-progress-value { background: #ffa951; }
+progress { color: #ffa951; }
 
 label {
   font-size: 32px;
@@ -83,7 +86,6 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation-name: header-up;
   animation-delay: 0.2s;
   animation-duration: 1s;
   animation-fill-mode: backwards;
@@ -121,7 +123,6 @@ label {
 }
 
 .header-text {
-  animation-name: text-up;
   animation-delay: 1s;
   animation-duration: 1s;
   animation-fill-mode: backwards;

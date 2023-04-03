@@ -49,10 +49,12 @@ let container2 = document.getElementById("model-two-view")
 let container3 = document.getElementById("model-three-view")
 let container4 = document.getElementById("model-four-view")
 let progressBar = document.getElementById("progress-bar")
-let progressBarContainer = document.getElementById("progress-bar-container")
+let progressBarContainer = document.querySelector(".progress-bar-container")
+let headerImg = document.querySelector(".header-img")
+let headerText = document.querySelector(".header-text")
 
 function init() {
-    const loadingManager = THREE.LoadingManager();
+    const loadingManager = new THREE.LoadingManager();
 
     loadingManager.onProgress = function(url, loaded, total) {
         console.log(loaded)
@@ -61,6 +63,8 @@ function init() {
 
     loadingManager.onLoad = function() {
         progressBarContainer.style.display = 'none'
+        headerImg.style.animationName = 'header-up'
+        headerText.style.animationName = 'text-up'
     }
 
     let gltfloader = new GLTFLoader(loadingManager);
