@@ -107,18 +107,6 @@ function init() {
     controls.autoRotateSpeed = 0.5
     controls.target.set(0, 1, 0)
 
-    function animate() {
-        requestAnimationFrame(animate)
-        if (container.clientWidth > 0 && container.clientHeight > 0) {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize( container.clientWidth, container.clientHeight );
-            controls.update()
-            renderer.render(scene, camera)
-        }
-    }
-    animate()
-
 
 
 
