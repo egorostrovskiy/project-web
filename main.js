@@ -10,6 +10,9 @@ import './style.css'
 let header_text = document.querySelector(".header-text")
 let header_img = document.querySelector(".header-img")
 
+const envUrl = new URL('./img/abandoned_slipway_4k.hdr', import.meta.url).href
+const crossbowUrl = new URL('./models/crossbow_scene.glb', import.meta.url).href
+
 window.addEventListener('scroll', function() {
     let value = window.scrollY;
     if (value < 1) {
@@ -70,11 +73,11 @@ function init() {
 
     let crossbow
 
-    rgbeLoader.load(url("/img/abandoned_slipway_4k.hdr"), function (texture) {
+    rgbeLoader.load(envUrl, function (texture) {
         texture.mapping = THREE.EquirectangularReflectionMapping
         scene.environment = texture;
 
-        gltfloader.load(url("/models/crossbow_scene.glb"), function ( gltf ) {
+        gltfloader.load(crossbowUrl, function ( gltf ) {
             const model = gltf.scene
             scene.add(model)
             crossbow = model
@@ -126,11 +129,11 @@ function init() {
 
     let crossbow2
 
-    rgbeLoader2.load(url("/img/abandoned_slipway_4k.hdr"), function (texture) {
+    rgbeLoader2.load(envUrl, function (texture) {
         texture.mapping = THREE.EquirectangularReflectionMapping
         scene2.environment = texture;
 
-        gltfloader.load(url("/models/crossbow_scene.glb"), function ( gltf ) {
+        gltfloader.load(crossbowUrl, function ( gltf ) {
             const model = gltf.scene
             scene2.add(model)
             crossbow2 = model
@@ -182,11 +185,11 @@ function init() {
 
     let crossbow3
 
-    rgbeLoader3.load(url("/img/abandoned_slipway_4k.hdr"), function (texture) {
+    rgbeLoader3.load(envUrl, function (texture) {
         texture.mapping = THREE.EquirectangularReflectionMapping
         scene3.environment = texture;
 
-        gltfloader.load(url("/models/crossbow_scene.glb"), function ( gltf ) {
+        gltfloader.load(crossbowUrl, function ( gltf ) {
             const model = gltf.scene
             scene3.add(model)
             crossbow3 = model
@@ -238,11 +241,11 @@ function init() {
 
     let crossbow4
 
-    rgbeLoader4.load(url("/img/abandoned_slipway_4k.hdr"), function (texture) {
+    rgbeLoader4.load(envUrl, function (texture) {
         texture.mapping = THREE.EquirectangularReflectionMapping
         scene4.environment = texture;
 
-        gltfloader.load(url("/models/crossbow_scene.glb"), function ( gltf ) {
+        gltfloader.load(crossbowUrl, function ( gltf ) {
             const model = gltf.scene
             scene4.add(model)
             crossbow4 = model
