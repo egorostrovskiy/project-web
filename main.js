@@ -288,15 +288,15 @@ function init() {
     controls4.target.set(0, 1, 0)
 
     function animate() {
-        console.log(container.clientWidth)
-        console.log(container)
         requestAnimationFrame(animate)
         if (container.clientWidth > 0 && container.clientHeight > 0) {
+            console.log("render")
             camera.aspect = container.clientWidth / container.clientHeight;
             camera.updateProjectionMatrix();
             renderer.setSize( container.clientWidth, container.clientHeight );
             controls.update()
             renderer.render(scene, camera)
+            
         }
         if (container2.clientWidth > 0 && container2.clientHeight > 0) {
             camera2.aspect = container2.clientWidth / container2.clientHeight;
