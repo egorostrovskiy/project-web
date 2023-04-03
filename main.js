@@ -4,13 +4,15 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js"
 import { DirectionalLight, Scene } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader"
+
 import './style.css'
 
 let header_text = document.querySelector(".header-text")
 let header_img = document.querySelector(".header-img")
 
-const envUrl = './project-web/img/abandoned_slipway_4k.hdr'
-const crossbowUrl = './project-web/models/crossbow_scene.glb'
+const envUrl = new URL('./img/abandoned_slipway_4k.hdr', import.meta.url).href
+const crossbowUrl = new URL('./models/crossbow_scene.glb', import.meta.url).href
+const dracoUrl = new URL('./draco/', import.meta.url).href
 
 window.addEventListener('scroll', function() {
     let value = window.scrollY;
@@ -50,7 +52,7 @@ let container4 = document.getElementById("model-four-view")
 function init() {
     let gltfloader = new GLTFLoader();
     let dracoloader = new DRACOLoader();
-    dracoloader.setDecoderPath(url("/draco/"))
+    dracoloader.setDecoderPath(dracoUrl)
     gltfloader.setDRACOLoader(dracoloader)
 
 
