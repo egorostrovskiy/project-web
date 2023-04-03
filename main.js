@@ -58,7 +58,7 @@ function init() {
         progressBar.value = (loaded / total) * 100;
     }
 
-    loadingManager.onLoad = function(url, loaded, total) {
+    loadingManager.onLoad = function() {
         progressBarContainer.style.display = 'none'
     }
 
