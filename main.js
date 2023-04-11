@@ -10,7 +10,7 @@ import './style.css'
 let header_text = document.querySelector(".header-text")
 let header_img = document.querySelector(".header-img")
 
-const envUrl = new URL('./img/abandoned_slipway_4k.hdr', import.meta.url).href
+const envUrl = new URL('./img/abandoned_slipway.hdr', import.meta.url).href
 const crossbowUrl = new URL('./models/crossbow_scene.glb', import.meta.url).href
 const dracoUrl = new URL('./draco/', import.meta.url).href
 
